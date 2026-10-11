@@ -1,0 +1,1234 @@
+/* =========================================================
+   GLOBAL STYLES
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+button {
+    border: none;
+    padding: 14px 25px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #444;
+}
+
+
+
+
+/* =========================================================
+   GLOBAL NAVIGATION — INDEX, CREATE, MANAGE
+========================================================= */
+
+body > nav, header > nav {
+    background: #000000;
+    color: #dfff9a;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+body > nav h2, header > nav h2 {
+    margin: 0;
+    color: #dfff9a;
+    font-size: 24px;
+}
+
+body > nav .nav-links, header > nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+body > nav .nav-links a, header > nav .nav-links a {
+    color: #dfff9a;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+body > nav .nav-links a:hover, header > nav .nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* =========================================================
+   INDEX.HTML — HOME PAGE
+========================================================= */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero section {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+/* =================================
+   HOME SECTION
+================================= */
+
+.home-section { 
+    max-width: 1200px; 
+    min-height: calc(100vh - 70px); 
+    margin: 0 auto; 
+    padding: 70px 50px; 
+    display: grid; 
+    grid-template-columns: 0.9fr 1.1fr; 
+    gap: 70px; align-items: center; 
+} 
+
+.steps { 
+    max-width: 500px; 
+} 
+
+.steps-label { 
+    font-size: 12px; 
+    font-weight: bold; 
+    letter-spacing: 2px; 
+    color: #52652b; 
+    margin-bottom: 18px; 
+} 
+
+.steps h2 { 
+    font-size: 38px; 
+    line-height: 1.15; 
+    margin: 0 0 35px; 
+    letter-spacing: -1px;
+} 
+
+.step { 
+    display: flex; 
+    gap: 20px; 
+    padding: 22px 0; 
+    border-top: 1px solid #d4d8ce;
+} 
+
+.step:last-child { 
+    border-bottom: 1px solid #d4d8ce; 
+} 
+
+.step > span { 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #647a35; 
+    min-width: 30px; 
+} 
+
+.step h3 { 
+    margin: 0 0 8px; 
+    font-size: 17px; 
+} 
+
+.step p { 
+    margin: 0; 
+    font-size: 14px; 
+    line-height: 1.7; 
+    color: #555; 
+    max-width: 360px; 
+}
+
+/* =================================
+   RIGHT — HERO
+================================= */
+
+.home-hero { 
+    padding: 45px; 
+    background: #dfff9a; 
+    border-left: 4px solid black; 
+} 
+.hero-label { 
+    font-size: 12px; 
+    font-weight: bold; 
+    letter-spacing: 2px;
+    color: #52652b; 
+    margin-bottom: 25px; } .home-hero h1 { 
+    font-size: 64px; 
+    line-height: 1.02; 
+    letter-spacing: -2px; 
+    margin: 0 0 25px; 
+    color: #111; 
+} 
+.hero-description { 
+    max-width: 500px; 
+    font-size: 17px; 
+    line-height: 1.8; 
+    color: #444; 
+    margin-bottom: 30px; 
+}
+
+/* =================================
+   HOME BUTTON
+================================= */
+
+.hero-button { 
+    display: inline-block; 
+    background: #000; 
+    color: #dfff9a; 
+    padding: 15px 25px; 
+    border: 1px solid #000; 
+    border-radius: 4px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    transition: background 0.2s ease, color 0.2s ease;
+} 
+.hero-button:hover { 
+    background: #dfff9a; 
+    color: #000; 
+}
+
+
+/* =========================================================
+   CREATE.HTML — CREATE PORTFOLIO
+========================================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #dfff9a;  /* OVERALL BACKGROUND */
+    color: #111111;
+}
+
+/* FORM CONTAINER */
+
+.form-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 55px 30px 70px;
+}
+
+.form-container h1 {
+    font-size: 42px;
+    text-align: left;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+.form-description {
+    text-align: left;
+    margin-bottom: 35px;
+    color: #555555;
+    line-height: 1.7;
+}
+
+/* FORM PANEL */
+
+#portfolioForm,
+#editPortfolioForm {
+    background: #ffffff;
+    padding: 35px;
+    border: 1px solid #deded6;
+    border-top: 4px solid #dfff9a;
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+/* FORM HEADINGS */
+
+#portfolioForm h2,
+#editPortfolioForm h2 {
+    margin-top: 35px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #deded6;
+    padding-bottom: 12px;
+    color: #111111;
+    font-size: 20px;
+}
+
+#portfolioForm h2:first-child,
+#editPortfolioForm h2:first-child {
+    margin-top: 0;
+}
+
+/* FORM LABELS */
+
+.form-container label {
+    color: #333333;
+}
+
+#portfolioForm label,
+#editPortfolioForm label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* INPUT FIELDS */
+
+#portfolioForm input,
+#portfolioForm textarea,
+#editPortfolioForm input,
+#editPortfolioForm textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d4d4cc;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #ffffff;
+    color: #111111;
+    transition: border-color 0.2s ease;
+}
+
+#portfolioForm textarea,
+#editPortfolioForm textarea {
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* INPUT FOCUS EFFECT */
+
+#portfolioForm input:focus,
+#portfolioForm textarea:focus,
+#editPortfolioForm input:focus,
+#editPortfolioForm textarea:focus {
+    outline: none;
+    border-color: #718b3c;
+    box-shadow: 0 0 0 2px rgba(113, 139, 60, 0.12);
+}
+
+/* SUBMIT BUTTON */
+
+#portfolioForm button,
+#editPortfolioForm button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    background: #000000;
+    color: #dfff9a;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#portfolioForm button:hover,
+#editPortfolioForm button:hover {
+    background: #dfff9a;
+    color: #000000;
+}
+
+/* CONSISTENT INPUT TEXT */
+
+.form-container input,
+.form-container textarea {
+    color: #111111;
+}
+
+/* ================================
+   MANAGE PORTFOLIO
+================================ */
+
+.manage-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 30px;
+}
+
+.manage-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.manage-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 0.6;
+}
+
+.manage-heading h2 {
+    font-size: 42px;
+    margin: 0 0 10px;
+}
+
+.manage-heading p {
+    margin: 0;
+}
+
+
+/* CREATE BUTTON */
+
+.create-btn {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/* PORTFOLIO CARD */
+
+.portfolio-card {
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.portfolio-card h2 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.portfolio-card > p {
+    margin: 0 0 25px;
+    opacity: 0.65;
+}
+
+
+/* ACTION BUTTONS */
+
+.portfolio-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.portfolio-actions button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.portfolio-actions button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* EMPTY PORTFOLIO */
+
+.empty-portfolio {
+    text-align: center;
+    padding: 70px 30px;
+    border: 2px dashed #ddd;
+    border-radius: 18px;
+}
+
+.empty-portfolio h2 {
+    margin-bottom: 10px;
+}
+
+.empty-portfolio p {
+    margin-bottom: 25px;
+    opacity: 0.65;
+}
+
+.empty-portfolio button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ================================
+   TEMPLATE SELECTION PAGE
+================================ */
+
+.template-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.template-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+
+    border: 1px solid #ddd;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transition: 0.2s ease;
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ================================
+   TEMPLATE PAGE HEADING
+================================ */
+
+main > h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+main > p {
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0.65;
+}
+
+
+/* ================================
+   TEMPLATE PREVIEW BOX
+================================ */
+
+.template-preview {
+    height: 250px;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    overflow: hidden;
+}
+
+
+/* ================================
+   SIMPLE PREVIEW
+================================ */
+
+.simple-preview {
+    background: white;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.simple-preview h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.simple-preview p {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin: 0;
+}
+
+
+/* ================================
+   MODERN PREVIEW
+================================ */
+
+.modern-preview {
+    background: #f4f6f8;
+}
+
+.modern-header {
+    background: #111827;
+    color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.modern-box {
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ================================
+   CREATIVE PREVIEW
+================================ */
+
+.creative-preview {
+    background: #111111;
+    color: white;
+}
+
+.creative-preview h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.creative-preview div {
+    padding: 10px 0;
+
+    border-top: 1px solid #444;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+
+/* ================================
+   TEMPLATE CARD TEXT
+================================ */
+
+.template-card > h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.template-card > p {
+    text-align: left;
+
+    margin-bottom: 20px;
+
+    line-height: 1.5;
+
+    opacity: 0.65;
+}
+
+
+/* ================================
+   TEMPLATE BUTTON
+================================ */
+
+.template-card button {
+    width: 100%;
+
+    background: #000000;
+    color: #dfff9a;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 14px 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.template-card button:hover {
+    background: #222222;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   TEMPLATE PAGE MOBILE
+================================ */
+
+@media (max-width: 850px) {
+
+    .template-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    main > h2 {
+        font-size: 36px;
+        padding: 0 20px;
+    }
+
+}
+
+
+/* =========================================================
+   PREVIEW.HTML — PREVIEW CONTROLS
+========================================================= */
+
+.preview-controls {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.preview-back {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.preview-controls button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.preview-controls button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PREVIEW.HTML — TEMPLATE 1: SIMPLE
+========================================================= */
+
+/* TEMPLATE 1 - SIMPLE */
+
+.template-simple {
+    max-width: 850px;
+    margin: 40px auto;
+    background: white;
+    padding: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.simple-header {
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #ddd;
+}
+
+.simple-header img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.simple-header h1 {
+    margin: 10px 0;
+}
+
+.simple-header p {
+    margin: 5px 0;
+}
+
+.simple-section {
+    margin-top: 30px;
+}
+
+.simple-section h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.simple-section p {
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PREVIEW.HTML — TEMPLATE 2: MODERN
+========================================================= */
+
+/* TEMPLATE 2 - MODERN */
+
+.template-modern {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 35px;
+    background: #f4f6f8;
+}
+
+
+/* Hero */
+
+.modern-hero {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #111827;
+    color: white;
+    padding: 40px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+.modern-profile img,
+.modern-no-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 18px;
+}
+
+.modern-profile img {
+    object-fit: cover;
+}
+
+.modern-no-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #374151;
+}
+
+.modern-intro h1 {
+    font-size: 42px;
+    margin: 5px 0 15px;
+}
+
+.modern-intro p {
+    margin: 6px 0;
+}
+
+.modern-label {
+    font-size: 13px;
+    letter-spacing: 3px;
+    opacity: 0.7;
+}
+
+
+/* Cards */
+
+.modern-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.modern-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    min-height: 170px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.modern-card h2 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.modern-card p {
+    line-height: 1.6;
+}
+
+.modern-number {
+    font-size: 13px;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+
+/* Social */
+
+.modern-social {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-top: 20px;
+}
+
+.modern-social h2 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   PREVIEW.HTML — TEMPLATE 3: CREATIVE
+========================================================= */
+
+/* TEMPLATE 3 - CREATIVE */
+
+.template-creative {
+    max-width: 1050px;
+    margin: 40px auto;
+    padding: 45px;
+    background: #111111;
+    color: white;
+}
+
+
+/* TOP */
+
+.creative-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    min-height: 350px;
+}
+
+.creative-small-title {
+    font-size: 13px;
+    letter-spacing: 4px;
+    opacity: 0.6;
+}
+
+.creative-title h1 {
+    font-size: 75px;
+    line-height: 0.95;
+    margin: 60px 0 25px;
+    max-width: 700px;
+}
+
+.creative-email {
+    opacity: 0.7;
+}
+
+.creative-photo img,
+.creative-no-photo {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+}
+
+.creative-no-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333333;
+    letter-spacing: 3px;
+}
+
+
+/* ABOUT */
+
+.creative-intro {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 50px 0;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+}
+
+.creative-intro span,
+.creative-block span,
+.creative-projects span,
+.creative-experience span,
+.creative-footer span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.6;
+}
+
+.creative-intro p {
+    font-size: 24px;
+    line-height: 1.5;
+    max-width: 700px;
+}
+
+
+/* SKILLS + EDUCATION */
+
+.creative-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.creative-block {
+    padding: 55px 35px;
+    min-height: 300px;
+}
+
+.creative-skills {
+    background: #222222;
+}
+
+.creative-education {
+    border-left: 1px solid #444;
+}
+
+.creative-block h2 {
+    font-size: 42px;
+    line-height: 1;
+    margin: 30px 0;
+}
+
+.creative-block p {
+    line-height: 1.7;
+}
+
+
+/* PROJECTS */
+
+.creative-projects {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 30px;
+    padding: 70px 35px;
+    background: #eeeeee;
+    color: #111111;
+}
+
+.creative-section-number {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.creative-projects h2 {
+    font-size: 55px;
+    line-height: 0.95;
+    margin: 25px 0;
+}
+
+.creative-projects p {
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+
+/* EXPERIENCE */
+
+.creative-experience {
+    padding: 55px 35px;
+    border-bottom: 1px solid #444;
+}
+
+.creative-experience p {
+    max-width: 750px;
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 25px;
+}
+
+
+/* FOOTER */
+
+.creative-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 50px 35px 20px;
+}
+
+.creative-footer p {
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE — GLOBAL / MANAGE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    #portfolioList {
+        grid-template-columns: 1fr;
+    }
+
+    
+    nav {
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+
+    nav .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE — INDEX
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .home-section {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        padding: 60px 30px;
+    }
+
+    .home-hero {
+        padding-left: 0;
+    }
+
+    .home-hero h1 {
+        font-size: 55px;
+    }
+
+    .steps h2 {
+        font-size: 36px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE — MANAGE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .manage-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .manage-heading h2 {
+        font-size: 34px;
+    }
+
+    .create-btn {
+        width: 100%;
+    }
+
+    .portfolio-actions {
+        flex-direction: column;
+    }
+
+    .portfolio-actions button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE — MODERN
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .modern-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modern-intro h1 {
+        font-size: 32px;
+    }
+
+    .modern-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .template-modern {
+        padding: 15px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE — CREATIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .template-creative {
+        padding: 25px;
+    }
+
+    .creative-top {
+        flex-direction: column;
+    }
+
+    .creative-title h1 {
+        font-size: 50px;
+        margin-top: 40px;
+    }
+
+    .creative-intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .creative-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .creative-education {
+        border-left: none;
+        border-top: 1px solid #444;
+    }
+
+    .creative-projects {
+        grid-template-columns: 1fr;
+    }
+
+    .creative-projects h2 {
+        font-size: 40px;
+    }
+
+    .creative-footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE — PREVIEW CONTROLS
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .preview-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .preview-controls button {
+        width: 100%;
+    }
+
+}

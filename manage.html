@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav> <h2>Portfolio Generator</h2> 
+        <div class="nav-links"> 
+            <a href="index.html">Home</a> 
+            <a href="manage.html">Manage Portfolio</a> 
+        </div> 
+    </nav>
+
+
+    <main class="manage-container">
+
+        <div class="manage-heading">
+
+            <div>
+                <p class="manage-label">PORTFOLIO MANAGER</p>
+
+                <h2>My Portfolio</h2>
+
+                <p>
+                    View, edit, or customize your portfolio.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div id="portfolioList">
+            <p>Loading portfolios...</p>
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

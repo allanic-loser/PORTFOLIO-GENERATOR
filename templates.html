@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Choose Template</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Portfolio Generator</h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="manage.html">Manage Portfolio</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <h2>Choose Your Portfolio Template</h2>
+
+        <p>
+            Select one of the three designs for your portfolio.
+        </p>
+
+
+        <div class="template-container">
+
+            <!-- Template 1 -->
+
+            <div class="template-card">
+
+                <div class="template-preview simple-preview">
+
+                    <h3>Your Name</h3>
+
+                    <p>About Me</p>
+
+                    <p>Skills</p>
+
+                    <p>Projects</p>
+
+                </div>
+
+                <h3>Template 1 — Simple</h3>
+
+                <p>
+                    A clean and professional portfolio design.
+                </p>
+
+                <button onclick="selectTemplate('simple')">
+                    Choose Simple
+                </button>
+
+            </div>
+
+
+            <!-- Template 2 -->
+
+            <div class="template-card">
+
+                <div class="template-preview modern-preview">
+
+                    <div class="modern-header">
+                        Your Name
+                    </div>
+
+                    <div class="modern-box">
+                        Skills
+                    </div>
+
+                    <div class="modern-box">
+                        Projects
+                    </div>
+
+                </div>
+
+                <h3>Template 2 — Modern</h3>
+
+                <p>
+                    A modern layout using cards and visual sections.
+                </p>
+
+                <button onclick="selectTemplate('modern')">
+                    Choose Modern
+                </button>
+
+            </div>
+
+
+            <!-- Template 3 -->
+
+            <div class="template-card">
+
+                <div class="template-preview creative-preview">
+
+                    <h3>YOUR NAME</h3>
+
+                    <div>
+                        ✦ ABOUT
+                    </div>
+
+                    <div>
+                        ✦ PROJECTS
+                    </div>
+
+                    <div>
+                        ✦ SKILLS
+                    </div>
+
+                </div>
+
+                <h3>Template 3 — Creative</h3>
+
+                <p>
+                    A more artistic and creative portfolio arrangement.
+                </p>
+
+                <button onclick="selectTemplate('creative')">
+                    Choose Creative
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

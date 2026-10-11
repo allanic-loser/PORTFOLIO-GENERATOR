@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio Preview</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <nav> <h2>Portfolio Generator</h2> 
+        <div class="nav-links"> 
+            <a href="index.html">Home</a> 
+            <a href="manage.html">Manage Portfolio</a> 
+        </div> 
+    </nav>
+
+
+    <main>
+
+        <div class="preview-controls">
+
+            <a href="manage.html" class="preview-back">
+                ← Back to Manage
+            </a>
+
+            <button onclick="goToTemplates()">
+                Change Template
+            </button>
+
+        </div>
+
+
+        <div id="portfolioPreview">
+
+            <p>Loading portfolio...</p>
+
+        </div>
+
+    </main> 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

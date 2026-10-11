@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Portfolio Generator</h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="manage.html">Manage Portfolio</a>
+        </div>
+    </nav>
+
+    <main class="form-container">
+
+        <h1>Create Your Portfolio</h1>
+
+        <p class="form-description">
+            Enter your information below to create your portfolio.
+        </p>
+
+        <form id="portfolioForm">
+
+            <!-- Personal Information -->
+            <h2>Personal Information</h2>
+
+            <label for="fullName">Full Name</label>
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="profilePicture">Profile Picture</label>
+            <input
+                type="file"
+                id="profilePicture"
+                accept="image/*"
+            >
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="example@email.com"
+                required
+            >
+
+            <label for="contactNumber">Contact Number</label>
+            <input
+                type="text"
+                id="contactNumber"
+                placeholder="09XXXXXXXXX"
+            >
+
+            <label for="address">Address</label>
+            <input
+                type="text"
+                id="address"
+                placeholder="Enter your address"
+            >
+
+            <!-- About Me -->
+            <h2>About Me</h2>
+
+            <label for="aboutMe">About Me</label>
+            <textarea
+                id="aboutMe"
+                rows="5"
+                placeholder="Tell something about yourself..."
+            ></textarea>
+
+            <!-- Education -->
+            <h2>Educational Background</h2>
+
+            <label for="education">Education Background</label>
+            <textarea
+                id="education"
+                rows="5"
+                placeholder="Example: Senior High School - ACT-IEF, TVL-ICT"
+            ></textarea>
+
+            <!-- Skills -->
+            <h2>Skills</h2>
+
+            <label for="skills">Skills</label>
+            <textarea
+                id="skills"
+                rows="5"
+                placeholder="Example: HTML, CSS, JavaScript, Photoshop"
+            ></textarea>
+
+            <!-- Projects -->
+            <h2>Projects</h2>
+
+            <label for="projects">Projects</label>
+            <textarea
+                id="projects"
+                rows="5"
+                placeholder="Describe your projects..."
+            ></textarea>
+
+            <!-- Work Experience -->
+            <h2>Work Experience</h2>
+
+            <label for="workExperience">Work Experience</label>
+            <textarea
+                id="workExperience"
+                rows="5"
+                placeholder="Describe your work experience..."
+            ></textarea>
+
+            <!-- Social Links -->
+            <h2>Social Media / Website Links</h2>
+
+            <label for="socialLinks">Social Links</label>
+            <textarea
+                id="socialLinks"
+                rows="4"
+                placeholder="Facebook, GitHub, LinkedIn, personal website, etc."
+            ></textarea>
+
+            <button type="submit">
+                Save Portfolio
+            </button>
+
+        </form>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
