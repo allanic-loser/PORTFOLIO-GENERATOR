@@ -1,12 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Choose Template</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,129 +13,111 @@
 
     <nav>
         <h2>Portfolio Generator</h2>
-
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="manage.html">Manage Portfolio</a>
         </div>
     </nav>
 
-    <main>
+    <main class="template-selection">
 
         <h2>Choose Your Portfolio Template</h2>
-
-        <p>
-            Select one of the three designs for your portfolio.
-        </p>
-
+        <p>Select a design, then customize its colors.</p>
 
         <div class="template-container">
 
-            <!-- Template 1 -->
-
             <div class="template-card">
-
                 <div class="template-preview simple-preview">
-
                     <h3>Your Name</h3>
-
                     <p>About Me</p>
-
                     <p>Skills</p>
-
                     <p>Projects</p>
-
                 </div>
-
                 <h3>Template 1 — Simple</h3>
-
-                <p>
-                    A clean and professional portfolio design.
-                </p>
-
-                <button onclick="selectTemplate('simple')">
-                    Choose Simple
-                </button>
-
+                <p>A clean and professional portfolio design.</p>
+                <button onclick="showColorOptions('simple')">Choose Simple</button>
             </div>
 
-
-            <!-- Template 2 -->
-
             <div class="template-card">
-
                 <div class="template-preview modern-preview">
-
-                    <div class="modern-header">
-                        Your Name
-                    </div>
-
-                    <div class="modern-box">
-                        Skills
-                    </div>
-
-                    <div class="modern-box">
-                        Projects
-                    </div>
-
+                    <div class="modern-header">Your Name</div>
+                    <div class="modern-box">Skills</div>
+                    <div class="modern-box">Projects</div>
                 </div>
-
                 <h3>Template 2 — Modern</h3>
-
-                <p>
-                    A modern layout using cards and visual sections.
-                </p>
-
-                <button onclick="selectTemplate('modern')">
-                    Choose Modern
-                </button>
-
+                <p>A modern layout using cards and visual sections.</p>
+                <button onclick="showColorOptions('modern')">Choose Modern</button>
             </div>
 
-
-            <!-- Template 3 -->
-
             <div class="template-card">
-
                 <div class="template-preview creative-preview">
-
                     <h3>YOUR NAME</h3>
-
-                    <div>
-                        ✦ ABOUT
-                    </div>
-
-                    <div>
-                        ✦ PROJECTS
-                    </div>
-
-                    <div>
-                        ✦ SKILLS
-                    </div>
-
+                    <div>✦ ABOUT</div>
+                    <div>✦ PROJECTS</div>
+                    <div>✦ SKILLS</div>
                 </div>
-
                 <h3>Template 3 — Creative</h3>
-
-                <p>
-                    A more artistic and creative portfolio arrangement.
-                </p>
-
-                <button onclick="selectTemplate('creative')">
-                    Choose Creative
-                </button>
-
+                <p>A more artistic and creative portfolio arrangement.</p>
+                <button onclick="showColorOptions('creative')">Choose Creative</button>
             </div>
 
         </div>
 
-    </main>
+        <section id="colorOptions" class="color-options" hidden>
+            <h2>Customize Your Colors</h2>
+            <p id="selectedTemplateText">Choose a palette for your portfolio.</p>
 
+            <div class="palette-container">
+
+                <button class="palette-option" onclick="choosePalette('forest')" type="button">
+                    <span class="palette-swatches">
+                        <span style="background:#173D35"></span>
+                        <span style="background:#DCE8D5"></span>
+                        <span style="background:#B5CC9B"></span>
+                    </span>
+                    Forest Green
+                </button>
+
+                <button class="palette-option" onclick="choosePalette('ocean')" type="button">
+                    <span class="palette-swatches">
+                        <span style="background:#142B4A"></span>
+                        <span style="background:#E7EEF7"></span>
+                        <span style="background:#72A9D8"></span>
+                    </span>
+                    Ocean Blue
+                </button>
+
+                <button class="palette-option" onclick="choosePalette('rose')" type="button">
+                    <span class="palette-swatches">
+                        <span style="background:#512D38"></span>
+                        <span style="background:#F6E9E7"></span>
+                        <span style="background:#D99BA5"></span>
+                    </span>
+                    Rose
+                </button>
+
+                <button class="palette-option" onclick="choosePalette('mono')" type="button">
+                    <span class="palette-swatches">
+                        <span style="background:#181818"></span>
+                        <span style="background:#F4F1EA"></span>
+                        <span style="background:#A8A8A8"></span>
+                    </span>
+                    Black & Cream
+                </button>
+
+            </div>
+
+            <button id="applyTemplateButton" type="button" onclick="applySelectedTemplate()">
+                Apply Colors & Preview
+            </button>
+
+        </section>
+
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase.js"></script>
     <script src="script.js"></script>
 
 </body>
-
 </html>
