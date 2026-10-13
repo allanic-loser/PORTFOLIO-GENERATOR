@@ -1139,6 +1139,43 @@ async function loadPortfolioPreview() {
         </div>
     `;
     }
+    
+    // Apply the visitor's selected color palette
+    const savedPalette = localStorage.getItem("selectedPalette");
+
+    if (savedPalette) {
+        try {
+            const colors = JSON.parse(savedPalette);
+            const portfolioElement = preview.querySelector(
+                ".template-simple, .template-modern, .template-creative"
+            );
+
+            if (portfolioElement) {
+                portfolioElement.style.setProperty(
+                    "--portfolio-bg",
+                    colors.background
+                );
+
+                portfolioElement.style.setProperty(
+                    "--portfolio-surface",
+                    colors.surface
+                );
+
+                portfolioElement.style.setProperty(
+                    "--portfolio-accent",
+                    colors.accent
+                );
+
+                portfolioElement.style.setProperty(
+                    "--portfolio-text",
+                    colors.text
+                );
+            }
+        } catch (error) {
+            console.error("Failed to apply portfolio colors:", error);
+        }
+    }
+
 }
 
 loadPortfolioPreview();
@@ -1188,3 +1225,87 @@ function goToTemplates() {
 }
 
 window.goToTemplates = goToTemplates;
+
+
+/* TEMPLATE COLOR CUSTOMIZATION */
+
+let chosenTemplateForColors = null;
+let chosenPalette = "forest";
+
+const portfolioPalettes = {
+    forest: {
+        background: "#173D35",
+        surface: "#DCE8D5",
+        accent: "#B5CC9B",
+        text: "#FFFFFF"
+    },
+    ocean: {
+        background: "#142B4A",
+        surface: "#E7EEF7",
+        accent: "#72A9D8",
+        text: "#FFFFFF"
+    },
+    rose: {
+        background: "#512D38",
+        surface: "#F6E9E7",
+        accent: "#D99BA5",
+        text: "#FFFFFF"
+    },
+    mono: {
+        background: "#181818",
+        surface: "#F4F1EA",
+        accent: "#A8A8A8",
+        text: "#FFFFFF"
+    }
+};
+
+function showColorOptions(template) {
+    chosenTemplateForColors = template;
+
+    document.getElementById("colorOptions").hidden = false;
+    document.getElementById("selectedTemplateText").textContent =
+        "Selected template: " +
+        template.charAt(0).toUpperCase() +
+        template.slice(1) +
+        ". Now choose your colors.";
+
+    document.getElementById("colorOptions").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+function choosePalette(paletteName) {
+    chosenPalette = paletteName;
+
+    document.querySelectorAll(".palette-option").forEach(button => {
+        button.classList.remove("selected");
+    });
+
+    if (typeof event !== "undefined" && event.currentTarget) {
+        event.currentTarget.classList.add("selected");
+    }
+}
+
+async function applySelectedTemplate() {
+    if (!chosenTemplateForColors) {
+        alert("Please choose a template first.");
+        return;
+    }
+
+    const colors = portfolioPalettes[chosenPalette];
+
+    if (!colors) {
+        alert("Please choose one of the available color palettes.");
+        return;
+    }
+
+    localStorage.setItem("selectedPalette", JSON.stringify(colors));
+    localStorage.setItem("selectedPaletteName", chosenPalette);
+
+    await selectTemplate(chosenTemplateForColors);
+}
+
+window.showColorOptions = showColorOptions;
+window.choosePalette = choosePalette;
+window.applySelectedTemplate = applySelectedTemplate;
