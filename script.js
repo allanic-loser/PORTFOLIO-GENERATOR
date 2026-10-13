@@ -1,8 +1,50 @@
+const VISITOR_ID_KEY = "portfolioVisitorId";
+
+function getVisitorId() {
+    let visitorId = localStorage.getItem(VISITOR_ID_KEY);
+
+    if (!visitorId) {
+        visitorId = crypto.randomUUID();
+        localStorage.setItem(VISITOR_ID_KEY, visitorId);
+    }
+
+    return visitorId;
+}
+
+const visitorId = getVisitorId();
+
+
+async function ensureUserSession() {
+    const { data: sessionData, error: sessionError } =
+        await supabaseClient.auth.getSession();
+
+    if (sessionError) {
+        throw sessionError;
+    }
+
+    if (sessionData.session) {
+        return sessionData.session.user;
+    }
+
+    const { data, error } =
+        await supabaseClient.auth.signInAnonymously();
+
+    if (error) {
+        throw error;
+    }
+
+    return data.user;
+}
+
+
 async function createPortfolio() {
+    const user = await ensureUserSession();
     // Check whether a portfolio already exists
+
     const { data, error } = await supabaseClient
         .from("portfolios")
         .select("id")
+        .eq("user_id", user.id)
         .limit(1);
 
     // Stop if the database check fails
@@ -58,13 +100,14 @@ if (portfolioForm) {
     portfolioForm.addEventListener("submit", async function(event) {
 
         event.preventDefault();
+        const user = await ensureUserSession();
 
-        // Check if a portfolio already exists
         const { data: existingPortfolio, error: checkError } =
             await supabaseClient
-                .from("portfolios")
-                .select("id")
-                .limit(1);
+            .from("portfolios")
+            .select("id")
+            .eq("user_id", user.id)
+            .limit(1);
 
         if (checkError) {
 
@@ -177,6 +220,8 @@ if (portfolioForm) {
             .from("portfolios")
             .insert([
                 {
+                    user_id: user.id,
+                    visitor_id: visitorId,
                     full_name: fullName,
                     profile_picture: profilePictureUrl,
                     email: email,
@@ -236,10 +281,13 @@ async function loadPortfolioForEdit() {
         return;
     }
 
+    const user = await ensureUserSession();
+
     const { data, error } = await supabaseClient
         .from("portfolios")
         .select("*")
         .eq("id", portfolioId)
+        .eq("user_id", user.id)
         .single();
 
     if (error) {
@@ -398,10 +446,13 @@ if (editPortfolioForm) {
 
         console.log("Updating portfolio:", portfolioId);
 
+        const user = await ensureUserSession();
+
         const { error } = await supabaseClient
             .from("portfolios")
             .update(updatedPortfolio)
-            .eq("id", portfolioId);
+            .eq("id", portfolioId)
+            .eq("user_id", user.id);
 
         if (error) {
 
@@ -440,10 +491,13 @@ async function deletePortfolio(id) {
         return;
     }
 
+    const user = await ensureUserSession();
+
     const { error } = await supabaseClient
         .from("portfolios")
         .delete()
-        .eq("id", id);
+        .eq("id", id)
+        .eq("user_id", user.id);
 
     if (error) {
 
@@ -479,10 +533,15 @@ async function loadPortfolios() {
     }
 
     // Get portfolio from Supabase
+    
+    const user = await ensureUserSession();
+
     const { data, error } = await supabaseClient
         .from("portfolios")
         .select("*")
+        .eq("user_id", user.id)
         .limit(1);
+
 
     if (error) {
 
@@ -578,12 +637,15 @@ async function selectTemplate(template) {
 
 
     // Save selected template to Supabase
+    const user = await ensureUserSession();
+
     const { error } = await supabaseClient
         .from("portfolios")
         .update({
             template: template
         })
-        .eq("id", portfolioId);
+        .eq("id", portfolioId)
+        .eq("visitor_id", visitorId);
 
 
     if (error) {
@@ -644,10 +706,13 @@ async function loadPortfolioPreview() {
         return;
     }
 
+    const user = await ensureUserSession();
+
     const { data, error } = await supabaseClient
         .from("portfolios")
         .select("*")
         .eq("id", portfolioId)
+        .eq("visitor_id", visitorId)
         .single();
 
     if (error) {
